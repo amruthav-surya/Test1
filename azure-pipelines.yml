@@ -4,9 +4,5 @@ pool:
 steps:
 - task: MSBuild@1
   inputs:
-    solution: 'https://github.com/amrutha006/Test1/blob/master/AnyStore.sln'
+    solution: 'AnyStore.sln'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
