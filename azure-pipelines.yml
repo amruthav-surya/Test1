@@ -2,10 +2,12 @@ pool:
   name: TEST
 
 steps:
-- script: |
-    vsbuild.exe /rebuild "AnyStore.sln" /configuration:Release
-    msbuild.exe "AnyStore.sln" /p:Configuration=Release
-  displayName: 'Build with vsbuild and msbuild'
+- task: MSBuild@1
+  inputs:
+    solution: 'AnyStore.sln'
+    platform: 'Any CPU'
+    configuration: 'Release'
+    msbuildArguments: '/t:Rebuild /p:VisualStudioVersion=latest'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
